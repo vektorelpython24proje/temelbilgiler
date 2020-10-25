@@ -1,1 +1,1 @@
-print("ŞAKİR KAYADAN")
+print("ŞAKİR KAYADAN 25.10.2020 Pazar")
