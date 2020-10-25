@@ -22,6 +22,7 @@ class C(B):
         self.c = "C"
 
 
+        
 
-obj1 = C()
+obj1 = A()
 obj1.imet2()
