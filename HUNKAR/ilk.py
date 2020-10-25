@@ -1,0 +1,2 @@
+print("Hunkar")
+print("Genc")
