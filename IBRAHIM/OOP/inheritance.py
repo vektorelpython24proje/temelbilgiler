@@ -1,5 +1,5 @@
 class A:
-    def __init(self):
+    def __init__(self):
         self.a="A"
     
     def imet(self):
@@ -13,10 +13,11 @@ class B(A):
         super().__init__()
         self.b="B"
 
-class C(B):
+class C(A,B):
     def __init__(self):
-        super().__init__()
-        self.c="C"
+        A.__init__()
+        B.__init__()
 
+ 
 obj1=C()
 obj1.imet2()
