@@ -16,12 +16,15 @@ class B(A):
         super().__init__()
         self.b = "B"
 
-class C(B):
+class C(B,A):
     def __init__(self):
-        super().__init__()
+        A.__init__(self)
+        B.__init__(self)
         self.c = "C"
+
+    def imet3(self):
+        A.imet2(self)
 
 obj1 = B()
 obj1.imet()
 obj1.imet2()
-
