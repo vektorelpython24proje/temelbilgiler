@@ -1,0 +1,1 @@
+print("İbrahim KOÇ")
