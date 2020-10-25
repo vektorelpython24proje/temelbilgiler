@@ -10,6 +10,7 @@ class A:
 
 class B(A):
     def __init__(self):
+        super().__init__()
         self.b="B"
 
 obj1=B()
