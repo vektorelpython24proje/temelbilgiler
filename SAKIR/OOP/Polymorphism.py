@@ -1,5 +1,6 @@
 # polymorphism
 
+
 # fonksiyonlarda polymorphism
 
 # var1 = "metin"
@@ -13,7 +14,6 @@
 # print(add(2,3))
 # print(add(2,3,4))
 
-# Class Method polymorphism
 # class Azerbaycan():
 #     def baskent(self):
 #         print("Bakü Azerbaycan Başkentidir.")
@@ -23,7 +23,6 @@
 
 #     def type(self):
 #         print("Demokrasi")
-
 
 # class Turkiye():
 #     def baskent(self):
@@ -43,17 +42,13 @@
 #     ulke.dil()
 #     ulke.type()
 
-
 class A():
     def __init__(self):
         self.a = "A"
     def imet(self):
-        return self.a 
-
-
+        return self.a
 
 class B(A):
-    
     def __init__(self):
         super().__init__()
         self.b = "B"
@@ -61,8 +56,8 @@ class B(A):
         print(super().imet())
         return self.b
 
-
 obj1 = B()
 print(obj1.imet())
 obj1 = A()
 print(obj1.imet())
+

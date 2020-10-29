@@ -1,2 +1,0 @@
-print("Hunkar")
-print("Genc")
