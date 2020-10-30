@@ -1,3 +1,9 @@
+"""
+*************************************************************
+*****               Ş A K İ R    K A Y A D A N              *
+*****                       OOP ÖDEVİ-1                     *
+*************************************************************
+"""
 class KP657():  # Sınıf-Class
     tur = "Kamu Personeli"  # class attribute - Sınıf Özelliği
     def __init__(self,ad,soyad,yas,gorev,maas): # constructor - yapıcı
