@@ -18,6 +18,7 @@ class Kedi(): # class
     def __del__(self): #destructor
         print(f"{self.adi} RIP")
 
+
 kedi1 = Kedi("Melek",10) # object
 kedi2 = Kedi("Tekir",20)
 #----------------
