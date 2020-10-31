@@ -20,6 +20,7 @@ def hesapZaman(fonk):
         print("Bu işlem için geçen zaman:",fonk.__name__,bitis-basla)
 
     return icFonk
+
 @hesapZaman
 def birlestirCon(*args):
     time.sleep(1)
