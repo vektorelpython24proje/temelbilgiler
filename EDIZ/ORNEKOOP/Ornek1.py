@@ -45,15 +45,15 @@ class TurkishHero(Hero):
 
 class DedeKorkut(TurkishHero):
     def __init__(self):
-        super().__init__("Dede Korkut",200,10000)
+        super().__init__("Dede Korkut",500,10000)
 
 class KaraMurat(TurkishHero):
     def __init__(self):
-        super().__init__("Kara Murat",300,9000)
+        super().__init__("Kara Murat",400,9000)
 
 class BattalGazi(TurkishHero):
     def __init__(self):
-        super().__init__("Battal Gazi",250,10000)
+        super().__init__("Battal Gazi",200,10000)
 
 
 class MarvelHero(Hero):
@@ -62,9 +62,15 @@ class MarvelHero(Hero):
         self.adi = adi
         self.guc = guc
         self.saglik = saglik
+        self.adim = 0
     def vurus(self):
+        self.adim += 1
+        self.kontrol()
         return self.guc
-    
+
+    def kontrol(self):
+        if self.superGuc and self.adim == 3:
+            self.saglik += 200
     def vurus2(self):
         return self.guc*2
 
@@ -90,6 +96,10 @@ class MarvelHero(Hero):
 class DeadPool(MarvelHero):
     def __init__(self):
         super().__init__("DeadPool",400,6000,True)
+
+    def kontrol(self):
+        if self.superGuc and self.adim == 4:
+            self.guc += 100
 
     def darbe2(self, guc):
         self.saglik -= guc//3
@@ -125,7 +135,12 @@ P2darbeListe = [P2.darbe,P2.darbe2,P2.darbe3]
 
 while P1.saglik > 0 and P2.saglik>0:
     time.sleep(1)
+    # P1.darbe2(P2.vurus2())
     rnd.choice(P1darbeListe)(rnd.choice(P2vurListe)())
     rnd.choice(P2darbeListe)(rnd.choice(P1vurListe)())
     print(P1.durum,P2.durum)
-
+else:
+    if P1.saglik>P2.saglik:
+        print(P1.adi,"Kazandı")
+    else:
+        print(P2.adi,"Kazandı")    
