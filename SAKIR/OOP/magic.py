@@ -15,6 +15,10 @@ print(isci.sayi)
 e2 = isci()
 print(isci.sayi)
 
+sayi = 10
+# sayi + 5
+print(sayi.__add__(5))
+
 
 class TurkishHero():
     def __init__(self,adi,guc,saglik):
@@ -26,14 +30,13 @@ class TurkishHero():
         return self.adi + " " + str(self.guc)
 
     def __repr__(self):
-        return self.adi + "-" + str(self.guc)
-
+        return self.adi + " " + str(guc)
 
     def __ge__(self,x):
         if x.guc >= self.guc:
-            return False
-        else:
             return True
+        else:
+            return False
 
     def __iadd__(self,guc):
         self.guc += guc
@@ -44,10 +47,9 @@ h2 = TurkishHero("Aleyna",50,100)
 # deneme = str(h1)
 # print(deneme)
 
-print(h1.guc)
-h1.guc += 60
-print(h1.guc)
+if h2>=h1:
+    print("Doğru")
 
 """
-https://www.tutorialsteacher.com/python/magic-methods-in-python#:~:text=Python%20%2D%20Course%20%26%20Books-,Python%20%2D%20Magic%20Methods,%22magic%22%20to%20your%20class.&text=As%20you%20can%20see%20above,two%20numbers%20using%20the%20%2B%20operator.
+https://www.tutorialsteacher.com/python/magic-methods-in"
 """
