@@ -19,6 +19,8 @@ class TurkishHero(Hero):
         self.guc = guc
         self.saglik = saglik
 
+    @property
+
     def vurus(self):
         return self.guc
 
