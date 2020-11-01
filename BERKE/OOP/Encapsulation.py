@@ -58,5 +58,3 @@ print("Gizli Değer",obj1.gizli)
 del obj1.gizli
 print("Gizli Değer",obj1.gizli)
 
-
-A.__tur
