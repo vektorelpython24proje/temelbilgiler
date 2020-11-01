@@ -23,7 +23,7 @@ class DosyaTool:
         # ali;veli;123\n
         sayac = 1
         for item in self.kayitlar:
-            print(f"{sayac}-{*item.split(DosyaTool.__ayrac}",end="")
+            print(f"{sayac}",*item.split(DosyaTool.__ayrac),end="")
             sayac+=1
     
     def girisYap(self):
