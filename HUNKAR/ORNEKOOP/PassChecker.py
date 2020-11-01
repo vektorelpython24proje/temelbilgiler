@@ -13,7 +13,7 @@ def check_upper(input):
 
 def check_lower(input):
     lowers = 0
-    lower_list = "a b c d e f g h i j k l m n o p q r s t u v w x y z".split()
+    lower_list = "a b c ç d e f g h ı i j k l m n o ö p q r s ş t u ü v w x y z".split()
     for char in input:
         if char in lower_list:
             lowers += 1
@@ -72,7 +72,7 @@ def validate_password(input):
             print("Parola en az 8 karakter uzunluğunda olmalıdır.")
 while True:
     password = input("İstediğiniz şifreyi giriniz: ")
-    print 
+    
     if validate_password(password):
         print("Parola tüm gereksinimleri karşılar ve kullanılabilir. Bravo!")
         print("...")
