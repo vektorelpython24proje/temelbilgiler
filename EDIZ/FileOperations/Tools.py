@@ -56,7 +56,8 @@ class DosyaTool:
         self.dosya.close()
 
     def menu(self):
-        menu = """
+        menu = f"""
+        {self.adres} üzerinde çalışılıyor
         1-Listeleme
         2-Ekleme
         3-Silme
@@ -77,6 +78,3 @@ class DosyaTool:
 
 
     
-
-obj1 = DosyaTool()
-obj1.menu()
