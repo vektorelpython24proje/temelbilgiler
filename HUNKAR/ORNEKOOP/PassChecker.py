@@ -74,8 +74,6 @@ while True:
     password = input("İstediğiniz şifreyi giriniz: ")
     print 
     if validate_password(password):
-        print("Password meets all requirements and may be used.")
-        print 
-        print("Exiting program...")
-        print
+        print("Parola tüm gereksinimleri karşılar ve kullanılabilir. Bravo!")
+        print("...")
         exit(0)
