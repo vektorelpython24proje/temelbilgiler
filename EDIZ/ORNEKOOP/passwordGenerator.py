@@ -11,13 +11,13 @@ class PassGen:
         sonuc = ""
         if len(password)>=8:
             for item in password:
-                if item.isUpper() and not bHarf:
+                if item.isupper() and not bHarf:
                     bHarf = True
-                elif item.isLower()  and not kHarf:
+                elif item.islower()  and not kHarf:
                     kHarf = True
-                elif item.isDigit() and not Num:
+                elif item.isdigit() and not Num:
                     Num = True
-                elif item in self.NKarList:
+                elif item in self.NKarList and not NKar:
                     NKar = True
         else:
             sonuc = "Uzunluk"
@@ -46,18 +46,18 @@ class PassGen:
         return bHarf and NKar and Num and kHarf
       
     def sifreUret(self):
-        
-        Fonkvar1 = lambda self:self.var1[rnd.randrange(0,len(self.var1))]
-        Fonkvar1Up = lambda self:self.var1[rnd.randrange(0,len(self.var1))].upper()
-        Fonkvar2 = lambda self:self.var2[rnd.randrange(0,len(self.var2))]
-        Fonkvar2Up = lambda self:self.var2[rnd.randrange(0,len(self.var2))].lower()
-        FonknKar =  lambda self:self.NKarList[rnd.randrange(0,len(self.NKarList))]
-        FonkNum = lambda self:str(rnd.randint(0,9))
+        Fonkvar1 = lambda :rnd.choice(self.var1).lower()
+        Fonkvar1Up = lambda :rnd.choice(self.var1).upper()
+        Fonkvar2 = lambda :rnd.choice(self.var2).lower()
+        Fonkvar2Up = lambda :rnd.choice(self.var2).upper()
+        FonknKar =  lambda :self.NKarList[rnd.randrange(0,len(self.NKarList))]
+        FonkNum = lambda :str(rnd.randint(0,9))
         liste = [Fonkvar1,Fonkvar1Up,FonknKar,FonkNum,Fonkvar2,Fonkvar2Up]
         sonuc = ""
         while not self.passControlCheck(sonuc):
-            sonuc += rnd.choice(liste)(self)
+            sonuc += rnd.choice(liste)()
         return sonuc
 
 
-print(PassGen("ibrahim","ediz").sifreUret())
+print(PassGen("İbrahim","ediz").sifreUret())
+
