@@ -20,7 +20,6 @@ def hesapZaman(fonk):
         print("Bu işlem için geçen zaman:",fonk.__name__,bitis-basla)
 
     return icFonk
-
 @hesapZaman
 def birlestirCon(*args):
     time.sleep(1)
@@ -31,8 +30,7 @@ def birlestirCon(*args):
 @hesapZaman
 def birlestirJoin(*args):
     time.sleep(1)
-    print(" ".join(args))
-    
+    print( " ".join(args))
 
 birlestirCon("UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS")
 birlestirJoin("UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS","UWUWEWEWE","ONYETENWEWE","UGWEUHEM","OSAS")

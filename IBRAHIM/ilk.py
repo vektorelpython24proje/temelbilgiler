@@ -1,1 +1,0 @@
-print("ibrahim koç")
