@@ -76,6 +76,7 @@ class DosyaTool:
                 print("Yanlış İşlem Numarası")
 
 
-obj1 = DosyaTool(adres=r"SUDE\OOP\dosya\dosya.py",alanlar=["bank ad","hesap no","tutar"])
+    
 
+obj1 = DosyaTool()
 obj1.menu()
