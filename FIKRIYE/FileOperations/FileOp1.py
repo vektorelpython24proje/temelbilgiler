@@ -4,3 +4,4 @@ bankaDefter.menu()
 
 telefonDefter = DosyaTool(r"EDIZ\ORNEKOOP\defter",alanlar=["Adı","Soyadı","Tel"])
 telefonDefter.menu()
+
