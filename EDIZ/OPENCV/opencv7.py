@@ -22,7 +22,7 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 
-img2 = cv2.imread(r"EDIZ\OPENCV\thuglife.png")
+img2 = cv2.imread(r"EDIZ\OPENCV\thuglife2.png")
 scale_percent = 20 # percent of original size
 width = int(img2.shape[1] * scale_percent / 100)
 height = int(img2.shape[0] * scale_percent / 100)
@@ -39,7 +39,7 @@ while True:
     for i in range(0,150,20):
         img1 = imgTemel.copy()
         konum = i
-        time.sleep(0.0001)
+        time.sleep(0.1)
         rows,cols,channels = img2.shape
         roi = img1[konum:konum+rows,konum:konum+cols]   
         img2gri = cv2.cvtColor(img2,cv2.COLOR_BGR2GRAY)
@@ -50,7 +50,7 @@ while True:
         dst = cv2.add(img1_bg,img2_fg)
         img1[konum:konum+rows,konum:konum+cols] = dst
         cv2.imshow("ilkresim",img1)
-        
+
     if cv2.waitKey(2) & 0xFF == ord("q"):
         break
    
