@@ -1,6 +1,6 @@
 import cv2
 img1 = cv2.imread(r"EDIZ\OPENCV\3D-Matplotlib.png")
-img2 = cv2.imread(r"EDIZ\OPENCV\mainlogo.png")
+img2 = cv2.imread(r"EDIZ\OPENCV\thuglife.png")
 
 rows,cols,channels = img2.shape
 roi = img1[0:rows,0:cols]
