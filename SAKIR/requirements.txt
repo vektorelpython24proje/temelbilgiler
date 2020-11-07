@@ -1,0 +1,4 @@
+
+c:\ProgramData\Anaconda3\Scripts\activate
+activate masaustu
+pip install opencv-python PyQt5 opencv-contrib-python
