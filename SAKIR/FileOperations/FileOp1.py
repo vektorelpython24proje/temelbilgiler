@@ -1,7 +1,7 @@
-for i in range(23):
-    print(i)
+from Tools import DosyaTool
+bankaDefter = DosyaTool(r"EDIZ\ORNEKOOP\banka",alanlar=["Banka","Hesap","Tutar"])
+bankaDefter.menu()
 
-"""
-Nesne Yönelimli Programlama
-Object Oriented Programming
-"""
+telefonDefter = DosyaTool(r"EDIZ\ORNEKOOP\defter",alanlar=["Adı","Soyadı","Tel"])
+telefonDefter.menu()
+
