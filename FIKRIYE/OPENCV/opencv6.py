@@ -11,6 +11,7 @@ width = int(img2.shape[1] * scale_percent / 100)
 height = int(img2.shape[0] * scale_percent / 100)
 dim = (width, height)
 
+
 img2 = cv2.resize(img2,dim,interpolation=cv2.INTER_AREA)
 while True:
     ret,frame = cap.read()
