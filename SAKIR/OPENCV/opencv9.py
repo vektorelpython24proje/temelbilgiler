@@ -1,5 +1,5 @@
 import cv2
-img = cv2.imread(r"EDIZ\OPENCV\bookpage.jpg")
+img = cv2.imread(r"SAKIR\OPENCV\bookpage.jpg")
 gri = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
 retval,threshold = cv2.threshold(img,12,255,cv2.THRESH_BINARY)
