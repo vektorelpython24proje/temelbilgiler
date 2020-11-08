@@ -1,28 +1,19 @@
-"""
-renkler_bgr.py
-R: red  G: green    B: blue
-"""
+# puttext_fontlar.py
 import cv2
 import numpy as np
-def bgr_renkler():
-    img = np.ones((510,510,3),np.uint8)*80  # 480x480 piksel boyutlu gri görüntü
-    cv2.circle(img,(90,90),80,(255,0,0),-1)
-    cv2.circle(img,(250,90),80,(0,255,0),-1)
-    cv2.circle(img,(410,90),80,(0,0,255),-1)
-    cv2.circle(img,(90,250),80,(255,255,0),-1)
-    cv2.circle(img,(250,250),80,(255,0,255),-1)
-    cv2.circle(img,(410,250),80,(0,255,255),-1)
-    cv2.circle(img,(170,410),80,(0,0,0),-1)
-    cv2.circle(img,(330,410),80,(255,255,255),-1)
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(img,'(255,0,0)',(15+30,95),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(0,255,0)',(175+30,95),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(0,0,255)',(335+30,95),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(255,255,0)',(15+20,250),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(255,0,255)',(175+20,250),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(0,255,255)',(335+20,250),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(0,0,0)',(95+40,410),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(255,255,255)',(255+5,410),font,0.6,(0,0,0),2,cv2.LINE_AA)
-    cv2.imshow('imaj',img)
-    cv2.imwrite('bgr_renkler.jpg',img)
-    # cv2.waitKey(0)
+fontlar = [
+'FONT_HERSHEY_SIMPLEX','FONT_HERSHEY_PLAIN',
+'FONT_HERSHEY_DUPLEX','FONT_HERSHEY_COMPLEX',
+'FONT_HERSHEY_TRIPLEX','FONT_HERSHEY_COMPLEX_SMALL',
+'FONT_HERSHEY_SCRIPT_SIMPLEX','FONT_HERSHEY_SCRIPT_COMPLEX']
+imaj = np.ones((720,780,3),np.uint8)*255 # beyaz imaj
+for j in range(8):
+    cv2.putText(imaj,fontlar[j],(20,40+j*40),j,1.1,(0,0,0),1)
+    italik = 16
+for j in range(8):
+    cv2.putText(imaj,fontlar[j]+' (italik)',(20,400+j*40),j+italik,1.1,(0,0,0),1)
+    cv2.imshow('imaj',imaj)
+while True:
+    k = cv2.waitKey(5) & 0xff
+    if k == 27 or k == ord('q'):break
+cv2.destroyAllWindows()

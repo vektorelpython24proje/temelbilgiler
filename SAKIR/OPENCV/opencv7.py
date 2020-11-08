@@ -22,7 +22,7 @@ while True:
 cap.release()
 cv2.destroyAllWindows()
 
-img2 = cv2.imread(r"EDIZ\OPENCV\thuglife.png")
+img2 = cv2.imread(r"SAKIR\OPENCV\thuglife.png")
 scale_percent = 20 # percent of original size
 width = int(img2.shape[1] * scale_percent / 100)
 height = int(img2.shape[0] * scale_percent / 100)
@@ -32,7 +32,7 @@ img2 = cv2.resize(img2,dim,interpolation=cv2.INTER_AREA)
 from pygame import mixer  # Load the popular external library
 
 mixer.init()
-mixer.music.load(r'EDIZ\OPENCV\thuglife.mp3')
+mixer.music.load(r'SAKIR\OPENCV\thuglife.mp3')
 mixer.music.play()
 
 while True:
