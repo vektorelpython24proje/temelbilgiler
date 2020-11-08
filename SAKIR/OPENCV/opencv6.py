@@ -4,7 +4,7 @@ import cv2
 import cv2 
 # frame per second
 cap = cv2.VideoCapture(0,cv2.CAP_DSHOW)
-img2 = cv2.imread(r"EDIZ\OPENCV\thuglife.png")
+img2 = cv2.imread(r"SAKIR\OPENCV\thuglife.png")
 konum = 150
 scale_percent = 20 # percent of original size
 width = int(img2.shape[1] * scale_percent / 100)
