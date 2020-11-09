@@ -17,5 +17,3 @@ while True:
     k = cv2.waitKey(5) & 0xff
     if k == 27 or k == ord('q'):break
 cv2.destroyAllWindows()
-
-print("hello")

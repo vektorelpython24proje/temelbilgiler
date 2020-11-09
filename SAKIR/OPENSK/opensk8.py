@@ -1,7 +1,7 @@
 # yeniden_boyutlama.py
 import cv2
 import random
-imaj=cv2.imread('SAKIR\Resimler\sardunya.jpg')
+imaj=cv2.imread('SAKIR\Resimler\penguen.jpg')
 cv2.imshow('imaj',imaj)
 oran=0.8
 imajlar=[]

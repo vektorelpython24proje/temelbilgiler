@@ -1,35 +1,51 @@
-"""
-renkler_bgr.py
-R: red  G: green    B: blue
-"""
+# turkce.py
 import cv2
 import numpy as np
-def bgr_renkler():
-    img=np.ones((510,510,3),np.uint8)*80 #480x480 piksel boyutlu gri görüntü
-    cv2.circle(img,(90,90),80,(255,0,0),-1)
-    cv2.circle(img,(250,90),80,(0,255,0),-1)
-    cv2.circle(img,(410,90),80,(0,0,255),-1)
-    cv2.circle(img,(90,250),80,(255,255,0),-1)
-    cv2.circle(img,(250,250),80,(255,0,255),-1)
-    cv2.circle(img,(410,250),80,(0,255,255),-1)
-    cv2.circle(img,(170,410),80,(0,0,0),-1)
-    cv2.circle(img,(330,410),80,(255,255,255),-1)
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(img,'(255,0,0)',(15+30,95),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(0,255,0)',(175+30,95),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(0,0,255)',(335+30,95),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(255,255,0)',(15+20,250),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(255,0,255)',(175+20,250),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(0,255,255)',(335+20,250),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(0,0,0)',(95+40,410),font,0.6,(255,255,255),2,cv2.LINE_AA)
-    cv2.putText(img,'(255,255,255)',(255+5,410),font,0.6,(0,0,0),2,cv2.LINE_AA)
-    cv2.imshow('imaj',img)
-    cv2.imwrite('bgr_renkler.jpg',img)
-    # cv2.waitKey(0)
-    while True:
-        k=cv2.waitKey(5) & 0xFF
-        if k==25 or k==ord('q'):
-            break
-    cv2.destroyAllWindows()
-if __name__ == "__main__":
-    bgr_renkler()
+from PIL import Image, ImageDraw, ImageFont
+import sys
+# Türkçe karakterleri de yazabilmek için
+def print_utf8_text(image,text,fontName='DejaVuSerif.ttf',color=(0,0,0),yer=(10,10),boy=48,arkaRenk=None):
+    font = ImageFont.truetype(fontName,boy) # font boyutu
+    if arkaRenk: # eğer arkaplan rengi varsa boya
+        ll = font.getsize(text)[0]
+        cv2.rectangle(image,(yer[0],yer[1]),(yer[0]+11,yer[1]+boy+4),arkaRenk,-1)
+        pilImg = Image.fromarray(image) # imajı pillow moduna çevir
+        draw = ImageDraw.Draw(pilImg)   # imajı hazırla
+        draw.text((yer[0],yer[1]),text,font=font,fill=(color[0],color[1],color[2],0))   # b,g,r,a
+        image = np.array(pilImg)    # imajı opencv moduna (numpy.array()) çevir
+        return image
+    if __name__ == "__main__":
+        if sys.platform == 'win32':
+            windows = True
+        else:
+            windows = False
+        imaj = np.ones((400,700,3),dtype=np.uint8) * 255
+        if windows:
+            fontName='verdana.ttf';renk = (0,0,0);yer=(10,10);boy = 64
+            imaj = print_utf8_text(imaj, "SİYAH " + fontName,fontName,renk,yer,boy)
+            fontName = 'tahoma.ttf';renk=(0,0,255);yer=(100,120);boy=36
+            imaj = print_utf8_text(imaj,"KIRMIZI "+fontName,fontName,renk,yer,boy)
+            fontName = 'times.tif';renk = (128,0,0);yer=(30,200);boy=48
+            imaj = print_utf8_text(imaj,"LACİVERT "+fontName,fontName,renk,yer,boy)
+            fontName='times.ttf';renk=(0,255,0);yer=(10,300);boy=42
+            imaj=print_utf8_text(imaj,"YEŞİL "+fontName,fontName,renk,yer,boy)
+            cv2.imshow('imaj',imaj)
+            cv2.waitKey(0)
+        else:
+            fontName='DejaVuSerif.ttf';renk=(0,0,0);yer=(10,10);boy=48
+            imaj=print_utf8_text(imaj,"SİYAH "+fontName,fontName,renk,yer,boy)
+            cv2.imshow('imaj',imaj)
+            cv2.waitKey(0)
+            fontName='LiberationMono-Bold.ttf';renk=(0,0,255);
+            yer = (100,120);boy=28
+            imaj=print_utf8_text(imaj, "KIRMIZI "+fontName,fontName,renk,yer,boy)
+            fontName='Purisa.ttf';renk=(128,0,0);yer=(30,200);boy=48
+            imaj=print_utf8_text(imaj,"LACİVERT "+fontName,fontName,renk,yer,boy)
+            fontName='Vera.ttf';renk=(0,255,0);yer=(10,300);boy=42
+            imaj=print_utf8_text(imaj,"YEŞİL "+fontName,fontName,renk,yer,boy,arkaRenk=(0,0,255))
+            cv2.imshow('beyaz fon',imaj)
+            cv2.moveWindow('beyaz fon',10,10)
+            while True:
+                k=cv2.waitKey(5) & 0xFF
+                if k==27 or k==ord('q'):break
+            cv2.destroyAllWindows()

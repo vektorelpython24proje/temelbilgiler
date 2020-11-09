@@ -24,5 +24,12 @@ def bgr_renkler():
     cv2.putText(img,'(0,0,0)',(95+40,410),font,0.6,(255,255,255),2,cv2.LINE_AA)
     cv2.putText(img,'(255,255,255)',(255+5,410),font,0.6,(0,0,0),2,cv2.LINE_AA)
     cv2.imshow('imaj',img)
-    cv2.imwrite('bgr_renkler.jpg',img)
+    cv2.imwrite('SAKIR\Resimler\bgr_renkler.jpg',img)
     # cv2.waitKey(0)
+    while True:
+        k = cv2.waitKey(5) & 0xFF
+        if k==27 or k==ord('q'):
+            break
+    cv2.destroyAllWindows()
+if __name__ == "__main__":
+    bgr_renkler()

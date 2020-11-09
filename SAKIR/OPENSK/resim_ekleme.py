@@ -1,7 +1,9 @@
 # resim_ekleme.py
 import cv2
-from turkce import *
-fon0=cv2.imread('resimler\cadde01.jpg')
+import PIL
+from opensk3.py import *
+#from PIL import Image, ImageDraw, ImageFont
+fon0=cv2.imread('SAKIR\Resimler\cadde01.jpg')
 top=cv2.imread('sari_top.png',-1)
 topmaske=top[:,:,3]
 ters_topmaske=cv2.bitwise_not(topmaske)
@@ -34,7 +36,7 @@ while True:
             fon[y:y+d,x:x+d+d]=cv2.add(alt_parca,ust_parca)
         except:pass
     mesaj="Yöntem:  "+str(yontem)+" (seçenekler: 1-2-3 ESC:ÇIKIŞ)"
-    fon=print_utf8_text(fon,mesaj,color=(255,255,255),boy=36,yer=(10,650)
+    fon = print_utf8_text(fon,mesaj,color=(255,255,255),boy=36,yer=(10,650)
 
     cv2.imshow('fon',fon)
     k=cv2.waitKey(10) & 0xFF

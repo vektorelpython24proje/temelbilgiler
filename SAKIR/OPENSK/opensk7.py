@@ -7,7 +7,7 @@ if sys.platform=='win32':
 else:
     deltax=50
     deltay=105
-img=cv2.imread("SAKIR\Resimler\monalisa.jpg")
+img=cv2.imread("SAKIR\Resimler\kaplan.jpg")
 m=img.copy()
 m[:,:,1]=0
 m[:,:,2]=0
