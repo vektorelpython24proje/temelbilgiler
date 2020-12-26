@@ -1,28 +1,21 @@
-# Inheritance
+class Araba():
+    tur = "Binek" # class attribute
+    def __init__(self,marka,model): # constructor 
+        # self.renk = "" # instance attribute
+        self.marka = marka
+        # self.yakit = ""
+        self.model = model
+        # self.guc = ""
 
-class A:
-    def __init__(self):
-        self.a = "A"
+    def ileri(self): #instance method
+        print(self.marka + self.model,"Hareket etti")
 
-    def imet(self):
-        print("Merhaba")
 
-    def imet2(self):
-        print(self.a)
+    def geri(self): #instance method
+        print(self.marka + self.model,"Hareket etti")
 
-class B(A):
-    def __init__(self):
-        super().__init__()
-        self.b = "B"
+arac1 = Araba("Alfa Romeo","Stelvio")
+arac2 = Araba("Reunault","Toros 1.2")
 
-class C(B):
-    def __init__(self):
-        super().__init__()
-        self.c = "C"
-
-# obj1 = B()
-# obj1.imet()
-# obj1.imet2()
-
-obj1 = C()
-obj1.imet2()
+arac1.ileri()
+arac2.ileri()
