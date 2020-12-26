@@ -13,7 +13,14 @@ collectionYeni = veritabaniYeni["koleksiyon"]
 x = collectionYeni.insert_one(sozluk)
 print("Kayıt",x.inserted_id," id sistemde yerini aldı")
 
+#sorgu = {"isim":{"$gt":"A"}}
+#a = collectionYeni.find(sorgu)
+#for item in a:
+    #print(item)
+
 sorgu = {"isim":{"$gt":"A"}}
-a = collectionYeni.find(sorgu)
-for item in a:
-    print(item))
+x = collectionYeni.find(sorgu)
+print(*x)
+sorguRex = {"isim":{"$regex":"^A"}}
+x = collectionYeni.find(sorgu)
+print(*x))))
