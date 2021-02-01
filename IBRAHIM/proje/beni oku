@@ -1,0 +1,40 @@
+uyarılar:
+türkçe olmamasının sebebi türkçe ses motorunu bulamamış olmam gTTS düzgün çalışmıyor
+sesi algılamasında sıkıntı çıkabiliyor
+%50 stack overflow ve youtube(codewithharry) yardımıyla yaptım
+animesearchongoogle isimli anime detay bulucuyu youtube üzerinden animescrapper olarak buldum ve paylaşılmış kodu kopyaladım
+cmd ile çalıştığı için cmd üzerinde bişeylere elleşince program bozuluyor
+programı kapatınca programda açtırdığım herşey kapanıyor (nasıl çözeceğimi bulamadım)  
+dil olarak garip gelirse translate ve kendim hazılardım o yüzden birşey olursa kusura bakmayın
+
+
+datas.txt içindeki:
+ilk satıra chrome yolunu
+ikinci satıra firefox yolunu
+üçüncü satıra spotifyclient yolunu
+yazmak gerekiyor.
+
+komutlar:
+x according to wikipedia
+search anime
+search on myanimelist
+search imdb
+google search
+thank
+how are you
+sad
+happy
+open youtube
+open google
+open reddit
+open turkish anime
+open sad video for me
+open web spotify
+open my anime
+open spotify
+open code(code açıkken çalışmıyor)
+open steam
+the time
+exit
+send email to echo
+send email to someone
